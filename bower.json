@@ -1,0 +1,20 @@
+{
+  "name": "freelance-project",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Milen_Tanev <mil3ntanev@abv.bg>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/TA-Team-Yellow/FreelanceProject",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
