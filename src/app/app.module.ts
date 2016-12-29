@@ -9,7 +9,7 @@ import { RegistrationComponent, LoginComponent } from './pages/users/index';
 
 import { UsersService } from './services/index';
 import { LoginButtons } from './pages/navbarUI/login-buttons';
-import { ProfileButtons } from './pages/navbarUI/profile-buttons';
+import { ProfileButtonsComponent } from './pages/navbarUI/profile-buttons';
 import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { AuthGuard } from './guards/auth.guard';
     RegistrationComponent,
     LoginComponent,
     LoginButtons,
-    ProfileButtons
+    ProfileButtonsComponent
   ],
   imports: [
     BrowserModule,

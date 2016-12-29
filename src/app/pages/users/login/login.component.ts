@@ -28,21 +28,4 @@ export class LoginComponent implements OnInit {
       alert('Status: ' + res.status);
     });
   }
-
-  logout() {
-    console.log('logout works');
-    //let authToken = sessionStorage.getItem('authtoken');
-    // let logout = this.userService.logout(authToken);
-    // logout.subscribe((result) => {
-    //   let res = result.json();
-    //   console.log(res);
-
-    //   if (result.status === 204) {
-    //     sessionStorage.clear();
-    //     alert('Status: ' + result.status);
-    //   } else {
-    //     alert('Status: ' + result.status);
-    //   }
-    // });
-  }
 }
