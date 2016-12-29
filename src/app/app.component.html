@@ -25,27 +25,13 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle navbar-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Account 
-              <img src="http://placehold.it/150x150" class="img-circle" alt="Profile Image" />
+              <img src="../images/user.png" class="img-circle" alt="Profile Image" />
               </a>
         <ul class="dropdown-menu">
-          <li><a href="/user/register">Create Account</a></li>
-          <li><a href="/user/login">Login</a></li>
+          <profile-info *ngIf='checkForUser'></profile-info>
+          <login-form *ngIf='!checkForUser'></login-form>
         </ul>
       </li>      
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle navbar-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              Account 
-              <img src="http://placehold.it/150x150" class="img-circle" alt="Profile Image" />
-              </a>
-        <ul class="dropdown-menu">
-          <li><a href="/user/profile">Profile</a></li>
-          <li><a href="#">Inbox</a></li>
-          <li><a href="#">Followers</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Settings</a></li>
-          <li><button type="submit" (click)="logout()" class="btn">Logout</button></li>       
-        </ul>
-      </li>
     </ul>
   </div>
 </nav>

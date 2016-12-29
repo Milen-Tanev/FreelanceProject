@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent, LoginComponent } from './pages/users/index';
 
 import { UsersService } from './services/index';
+import { LoginButtons } from './pages/navbarUI/login-buttons';
+import { ProfileButtons } from './pages/navbarUI/profile-buttons';
 import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    LoginButtons,
+    ProfileButtons
   ],
   imports: [
     BrowserModule,

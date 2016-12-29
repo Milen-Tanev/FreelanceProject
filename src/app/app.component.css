@@ -74,9 +74,10 @@
 }
 
 @media (min-width: 768px) {
-    .bs-dark .dropdown:hover {background-color: #000;}
+  .bs-dark .dropdown:hover {background-color: #000;}
 	.bs-dark .dropdown:hover .dropdown-menu {
 	  display: block;
+    top: 48px;
 	}
 	.bs-dark .navbar-form {
 	  padding:0px;
