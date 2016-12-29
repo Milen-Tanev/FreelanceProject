@@ -1,5 +1,5 @@
-import {IUser} from '../../models/IUser';
-import {IComment} from '../../models/IComment';
+import {IUser} from '../../interfaces/IUser';
+import {IComment} from '../../interfaces/IComment';
 import {Component} from '@angular/core'
 
 //Add template url

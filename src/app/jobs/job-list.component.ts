@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {IJob} from '../../interfaces/IJob'
 
 @Component({
     selector:'list-jobs',
@@ -13,5 +14,5 @@ import {Component} from '@angular/core';
     `
 })
 export class ListJobsComponent {
-
+    jobs:IJob[]
 }
