@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
     let login = this.userService.loginUser( this.model );
     login.subscribe((result) => {
       let res = result.json();
+      sessionStorage.setItem('username', res.username);
       sessionStorage.setItem('authtoken', res._kmd.authtoken);
-      console.log(res._kmd.authtoken);
+      console.log(res);
       alert('Status: ' + res.status);
     });
   }
