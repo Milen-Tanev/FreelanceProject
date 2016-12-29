@@ -7,6 +7,7 @@ import { RoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './pages/users/registration/registration.component';
 
+import { UsersService } from './services/index';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { RegistrationComponent } from './pages/users/registration/registration.c
     HttpModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [
+    UsersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
