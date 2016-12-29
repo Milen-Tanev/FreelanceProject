@@ -14,15 +14,14 @@ export class UsersService {
 
   createUser(user: User) {
     // base auth
-    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx', user, { headers: headers })
+    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx', user, { headers: headers });
   }
 
-  loginUser(user: any) {
-    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/login', user , { headers: headers })
+  loginUser(user: {username: string, password: string}) {
+    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/login', user , { headers: headers });
   }
 
-  logout(user: any) {
-    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/_logout', user , { headers: headers })
-    .subscribe(result => console.log(result));
+  logout(authToken: string) {
+    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/_logout', authToken , { headers: headers })
   }
 }

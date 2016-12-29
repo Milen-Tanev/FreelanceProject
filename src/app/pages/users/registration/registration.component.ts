@@ -30,9 +30,4 @@ export class RegistrationComponent implements OnInit {
       alert('Status: ' + res.status);
     });
   }
-  login() {
-    let login = this.userService.loginUser( { username: this.model.username, password: this.model.password } );
-    login.subscribe((result) => {
-    });
-  }
 }

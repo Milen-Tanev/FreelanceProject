@@ -5,13 +5,16 @@ import { HttpModule } from '@angular/http';
 import { RoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './pages/users/registration/registration.component';
+import { RegistrationComponent, LoginComponent } from './pages/users/index';
 
 import { UsersService } from './services/index';
+import { AuthGuard } from './guards/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import { UsersService } from './services/index';
     RoutingModule
   ],
   providers: [
-    UsersService
+    UsersService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
