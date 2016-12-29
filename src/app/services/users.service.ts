@@ -14,6 +14,7 @@ export class UsersService {
 
   createUser(user: User) {
     // base auth
+    console.log(headers);
     return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx', user, { headers: headers });
   }
 
@@ -25,7 +26,8 @@ export class UsersService {
     let kinveyLogoutHeaders = 'Kinvey ' + authToken;
     console.log(kinveyLogoutHeaders);
     let logoutHeaders = new Headers();
-    logoutHeaders.append('Autorization', kinveyLogoutHeaders);
-    return this.http.get('https://baas.kinvey.com/user/kid_ryr_EhREx/_logout', { headers: logoutHeaders });
+    logoutHeaders.append('Authorization', kinveyLogoutHeaders);
+    console.log(logoutHeaders);
+    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/_logout',{}, { headers: logoutHeaders });
   }
 }
