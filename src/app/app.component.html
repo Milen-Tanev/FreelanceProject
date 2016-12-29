@@ -24,12 +24,12 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
         <a href="#" class="dropdown-toggle navbar-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              Account 
+              {{username}} 
               <img src="../images/user.png" class="img-circle" alt="Profile Image" />
               </a>
         <ul class="dropdown-menu">
-          <profile-info *ngIf='checkForUser'></profile-info>
-          <login-form *ngIf='!checkForUser'></login-form>
+          <profile-info *ngIf='checkForUser()'></profile-info>
+          <login-form *ngIf='!checkForUser()'></login-form>
         </ul>
       </li>      
     </ul>

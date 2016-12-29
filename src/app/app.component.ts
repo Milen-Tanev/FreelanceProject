@@ -9,6 +9,7 @@ import { UsersService } from './services/index';
   ]
 })
 export class AppComponent {
+    private username: string = sessionStorage.getItem('username') || 'Account';
     checkForUser():boolean {
     let authToken = sessionStorage.getItem('authtoken');
     if(authToken){
