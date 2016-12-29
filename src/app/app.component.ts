@@ -9,4 +9,12 @@ import { UsersService } from './services/index';
   ]
 })
 export class AppComponent {
+    checkForUser():boolean {
+    let authToken = sessionStorage.getItem('authtoken');
+    if(authToken){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

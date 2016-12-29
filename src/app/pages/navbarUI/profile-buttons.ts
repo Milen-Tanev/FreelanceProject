@@ -26,12 +26,4 @@ export class ProfileButtonsComponent {
       }
     });
   }
-  checkForUser():boolean {
-    let authToken = sessionStorage.getItem('authtoken');
-    if(authToken){
-      return true;
-    } else {
-      return false;
-    }
-  }
 }
