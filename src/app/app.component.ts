@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UsersService } from './services/index';
+import { CheckForUserDirective } from './directives/checkForUserDirective';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,13 +11,22 @@ import { UsersService } from './services/index';
   ]
 })
 export class AppComponent {
-    private username: string = sessionStorage.getItem('username') || 'Account';
-    checkForUser():boolean {
+  CheckForUserDirective;
+  private username: string = sessionStorage.getItem('username') || 'Account';
+  loginAuth(): boolean {
     let authToken = sessionStorage.getItem('authtoken');
-    if(authToken){
+    if (authToken === null) {
       return true;
     } else {
       return false;
+    }
+  }
+  profileAuth(): boolean {
+    let authToken = sessionStorage.getItem('authtoken');
+    if (authToken === null) {
+      return false;
+    } else {
+      return true;
     }
   }
 }

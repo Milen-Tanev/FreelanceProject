@@ -28,8 +28,8 @@
               <img src="../images/user.png" class="img-circle" alt="Profile Image" />
               </a>
         <ul class="dropdown-menu">
-          <profile-info *ngIf='checkForUser()'></profile-info>
-          <login-form *ngIf='!checkForUser()'></login-form>
+          <login-form *appIsLogged = "loginAuth()" ></login-form>
+          <profile-info *appIsLogged = "profileAuth()" ></profile-info>  
         </ul>
       </li>      
     </ul>

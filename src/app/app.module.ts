@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { UsersService } from './services/index';
 import { LoginButtons } from './pages/navbarUI/login-buttons';
 import { ProfileButtonsComponent } from './pages/navbarUI/profile-buttons';
 import { AuthGuard } from './guards/auth.guard';
+import { CheckForUserDirective } from './directives/checkForUserDirective';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthGuard } from './guards/auth.guard';
     RegistrationComponent,
     LoginComponent,
     LoginButtons,
-    ProfileButtonsComponent
+    ProfileButtonsComponent,
+    CheckForUserDirective
   ],
   imports: [
     BrowserModule,
