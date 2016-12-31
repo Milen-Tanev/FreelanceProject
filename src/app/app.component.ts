@@ -2,13 +2,16 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UsersService } from './services/index';
 import { CheckForUserDirective } from './directives/checkForUserDirective';
+import {JobListService} from './jobs/job-list.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: [
     './app.component.css'
-  ]
+  ],
+  providers:[JobListService]
+  
 })
 export class AppComponent {
   CheckForUserDirective;

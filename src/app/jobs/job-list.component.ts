@@ -1,18 +1,22 @@
-import {Component} from '@angular/core';
-import {IJob} from '../../interfaces/IJob'
+import { Component,OnInit } from '@angular/core';
+import { IJob } from '../../interfaces/IJob'
+import { JobListService } from './job-list.service'
 
 @Component({
-    selector:'list-jobs',
-    template:`
-    <h1>Available jobs:</h1>
-    <div *ngFor='let job of jobs>
-    <h2>{{job.title}}</h2>
-    <p>{{job.description}}</p>
-    <ul *ngFor=let requirement of job.requirements>
-    <li>{{requirement}}</li>
-    </ul>
-    `
+    selector: 'list-jobs',
+    templateUrl: ''
 })
-export class ListJobsComponent {
-    jobs:IJob[]
+export class ListJobsComponent implements OnInit {
+    jobs: IJob[]
+
+    constructor(private jobService: JobListService) {
+    }
+
+    ngOnInit() {
+        this.jobService.getAllJobs()
+            .subscribe(
+                jobs => this.jobs=jobs,
+                error => console.log('error')
+            )
+    }
 }
