@@ -1,27 +1,23 @@
-<tbody>
-    <h3>Freelancers</h3>
-    <form class="form-horizontal" #searchForm="ngForm">
-
+<h3>Freelancers</h3>
+<table class='table table-hover'>
     <tr>
-        <td>
-        </td>
-        <td>
+        <th>
             Username
-        </td>
-        <td class="description">
+        </th>
+        <th>
             Description
-        </td>
-        <td>
-            e-mail
-        </td>
-        <td>
+        </th>
+        <th>
             First Name
-        </td>
-        <td>
+        </th>
+        <th>
             Last Name
-        </td>
-        <td>
-        </td>                 
+        </th>
     </tr>
-    <tr freelancer-profile-short *ngFor="let freenlancer of freelancers" [freelancer-profile-short] = "freenlancer"></tr>
-</tbody>
+    <tr *ngFor="let freelancer of freelancers">
+        <td>{{freelancer.username}}</td>
+        <td>{{freelancer.description}}</td>
+        <td>{{freelancer.firstName}}</td>
+        <td>{{freelancer.lastName}}</td>
+    </tr>
+    <table>
