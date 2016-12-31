@@ -12,6 +12,8 @@ import { LoginButtons } from './pages/navbarUI/login-buttons';
 import { ProfileButtonsComponent } from './pages/navbarUI/profile-buttons';
 import { AuthGuard } from './guards/auth.guard';
 import { CheckForUserDirective } from './directives/checkForUserDirective';
+import { FreelancersListComponent } from './pages/freelancers-list/freelancers-list.component';
+import { EmployersListComponent } from './pages/employers-list/employers-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CheckForUserDirective } from './directives/checkForUserDirective';
     LoginComponent,
     LoginButtons,
     ProfileButtonsComponent,
-    CheckForUserDirective
+    CheckForUserDirective,
+    FreelancersListComponent,
+    EmployersListComponent
   ],
   imports: [
     BrowserModule,
