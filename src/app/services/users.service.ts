@@ -2,10 +2,13 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { User } from '../../models/user.model';
-import { kinveyKey, kinveySecret, kinveyAuthHeaders } from '../../shared/constants';
+import { UserProfile } from '../../models/user-profile.model';
+import { kinveyKey, kinveySecret, kinveyHeaderKey, kinveyUserAuthorization, kinveyBasicHeaders, 
+          guestUserAuthToken, kinveyAppDataUrl, kinveyUsersProfileColleciton} from '../../shared/constants';
+
 
 let headers = new Headers();
-headers.append('Authorization', kinveyAuthHeaders.Authorization);
+headers.append(kinveyHeaderKey, kinveyBasicHeaders.Authorization);
 
 @Injectable()
 export class UsersService {
@@ -16,6 +19,12 @@ export class UsersService {
     // base auth
     console.log(headers);
     return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx', user, { headers: headers });
+  }
+  createUserProfile(userProfile: UserProfile, authtoken: string) {
+    let userCredentials = kinveyUserAuthorization + authtoken;
+    let createUserProfileHeaders = new Headers();
+    createUserProfileHeaders.append(kinveyHeaderKey, userCredentials );
+    return this.http.post(kinveyAppDataUrl + kinveyUsersProfileColleciton, userProfile, {headers: createUserProfileHeaders});
   }
 
   loginUser(user: {username: string, password: string}) {
