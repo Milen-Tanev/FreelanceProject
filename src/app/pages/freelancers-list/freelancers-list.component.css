@@ -1,0 +1,10 @@
+td {
+    border-bottom: 1px solid grey; 
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+}
+
+.description {
+    width: 250px;
+}

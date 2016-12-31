@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { UsersService } from '../../../services/index';
+import { UsersService, UsersProfileService } from '../../../services/index';
 
 import { User } from '../../../../models/user.model';
 import { UserProfile } from '../../../../models/user-profile.model';
@@ -18,7 +18,7 @@ export class RegistrationComponent implements OnInit {
 
   roles = ['Freelancer', 'Employer'];
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService, private usersPorfileService: UsersProfileService) { }
 
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class RegistrationComponent implements OnInit {
         console.log(this.userProfile);
         sessionStorage.setItem('username', res.username);
         sessionStorage.setItem('authtoken', res._kmd.authtoken);
-        this.userService.createUserProfile(this.userProfile, res._kmd.authtoken)
+        this.usersPorfileService.createUserProfile(this.userProfile, res._kmd.authtoken)
         .subscribe((r) => { console.log(r); });
       }
     });

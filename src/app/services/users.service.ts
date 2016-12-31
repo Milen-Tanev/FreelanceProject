@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { User } from '../../models/user.model';
-import { UserProfile } from '../../models/user-profile.model';
-import { kinveyKey, kinveySecret, kinveyHeaderKey, kinveyUserAuthorization, kinveyBasicHeaders, 
-          guestUserAuthToken, kinveyAppDataUrl, kinveyUsersProfileColleciton} from '../../shared/constants';
+import { kinveyKey, kinveySecret, kinveyHeaderKey, kinveyBasicHeaders } from '../../shared/constants';
 
 
 let headers = new Headers();
@@ -20,12 +18,6 @@ export class UsersService {
     console.log(headers);
     return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx', user, { headers: headers });
   }
-  createUserProfile(userProfile: UserProfile, authtoken: string) {
-    let userCredentials = kinveyUserAuthorization + authtoken;
-    let createUserProfileHeaders = new Headers();
-    createUserProfileHeaders.append(kinveyHeaderKey, userCredentials );
-    return this.http.post(kinveyAppDataUrl + kinveyUsersProfileColleciton, userProfile, {headers: createUserProfileHeaders});
-  }
 
   loginUser(user: {username: string, password: string}) {
     return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/login', user , { headers: headers });
@@ -37,6 +29,6 @@ export class UsersService {
     let logoutHeaders = new Headers();
     logoutHeaders.append('Authorization', kinveyLogoutHeaders);
     console.log(logoutHeaders);
-    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/_logout',{}, { headers: logoutHeaders });
+    return this.http.post('https://baas.kinvey.com/user/kid_ryr_EhREx/_logout', {}, { headers: logoutHeaders });
   }
 }

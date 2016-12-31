@@ -1,3 +1,27 @@
-<p>
-  freelancers-list works!
-</p>
+<tbody>
+    <h3>Freelancers</h3>
+    <form class="form-horizontal" #searchForm="ngForm">
+
+    <tr>
+        <td>
+        </td>
+        <td>
+            Username
+        </td>
+        <td class="description">
+            Description
+        </td>
+        <td>
+            e-mail
+        </td>
+        <td>
+            First Name
+        </td>
+        <td>
+            Last Name
+        </td>
+        <td>
+        </td>                 
+    </tr>
+    <tr freelancer-profile-short *ngFor="let freenlancer of freelancers" [freelancer-profile-short] = "freenlancer"></tr>
+</tbody>
