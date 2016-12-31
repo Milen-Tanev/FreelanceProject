@@ -14,7 +14,7 @@ export class JobListService {
 
     getAllJobs():Observable<IJob[]> {
         let headers = new Headers();
-        headers.append('Authorization', 'Basic dGVzdDp0ZXN0');
+        headers.append('Authorization','Basic YXNkOmFzZA==');
         return this.http.get(this.jobsUrl, {
             headers: headers
         }).map((response:Response) => <IJob[]>response.json());

@@ -15,7 +15,8 @@ import { CheckForUserDirective } from './directives/checkForUserDirective';
 import { FreelancersListComponent } from './pages/freelancers-list/freelancers-list.component';
 import { EmployersListComponent } from './pages/employers-list/employers-list.component';
 import { FreelancerShortComponent } from './pages/freelancers-list/freelancer-short/freelancer-short.component';
-import { EmployerShortComponent} from './pages/employers-list/employers-short/employer-short.component';
+import { EmployerShortComponent } from './pages/employers-list/employers-short/employer-short.component';
+import { ListJobsComponent } from './jobs/job-list.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EmployerShortComponent} from './pages/employers-list/employers-short/em
     FreelancersListComponent,
     EmployersListComponent,
     FreelancerShortComponent,
-    EmployerShortComponent
+    EmployerShortComponent,
+    ListJobsComponent
   ],
   imports: [
     BrowserModule,

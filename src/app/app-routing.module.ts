@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent, LoginComponent } from './pages/users/index';
 import { FreelancersListComponent } from './pages/freelancers-list/freelancers-list.component';
 import { EmployersListComponent } from './pages/employers-list/employers-list.component';
+import { ListJobsComponent } from './jobs/job-list.component'
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
     component: FreelancersListComponent
   },
   {
-  path: 'employers',
+    path: 'employers',
     component: EmployersListComponent
   },
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
     path: 'user/profile',
     component: RegistrationComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'jobs',
+    component: ListJobsComponent
   }
 ];
 
