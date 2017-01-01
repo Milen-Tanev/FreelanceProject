@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent, LoginComponent } from './pages/users/index';
 import { FreelancersListComponent } from './pages/freelancers-list/freelancers-list.component';
 import { EmployersListComponent } from './pages/employers-list/employers-list.component';
-import { ListJobsComponent } from './jobs/job-list.component'
-import { HomeComponent } from './home/home.component'
-import { JobCreateComponent } from './jobs/job-create.component'
+import { ListJobsComponent } from './jobs/job-list.component';
+import { HomeComponent } from './home/home.component';
+import { JobCreateComponent } from './jobs/job-create.component';
 
 const routes: Routes = [
   {
@@ -30,7 +30,6 @@ const routes: Routes = [
   {
     path: 'user/profile',
     component: RegistrationComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: 'jobs',
@@ -45,8 +44,10 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: JobCreateComponent
-  }
+    component: JobCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
