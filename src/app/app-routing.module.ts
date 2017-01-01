@@ -7,6 +7,7 @@ import { RegistrationComponent, LoginComponent } from './pages/users/index';
 import { FreelancersListComponent } from './pages/freelancers-list/freelancers-list.component';
 import { EmployersListComponent } from './pages/employers-list/employers-list.component';
 import { ListJobsComponent } from './jobs/job-list.component'
+import { HomeComponent } from './home/home.component'
 
 const routes: Routes = [
   {
@@ -33,6 +34,13 @@ const routes: Routes = [
   {
     path: 'jobs',
     component: ListJobsComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: '', redirectTo: 'home', pathMatch: 'full'
   }
 ];
 

@@ -1,0 +1,17 @@
+div {
+    background-image: url(https://www.upwork.com/static/marketing/adquiro-webpack/images/landing-hero.50496a3527ba.jpg);
+    background-repeat: no-repeat;
+    height: 500px;
+    text-align: center
+}
+
+h1 {
+    font-size: 600%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 5%;
+}
+
+span {
+    color: #337AB7;
+}

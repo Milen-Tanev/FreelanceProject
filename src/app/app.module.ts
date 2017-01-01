@@ -17,6 +17,7 @@ import { EmployersListComponent } from './pages/employers-list/employers-list.co
 import { FreelancerShortComponent } from './pages/freelancers-list/freelancer-short/freelancer-short.component';
 import { EmployerShortComponent } from './pages/employers-list/employers-short/employer-short.component';
 import { ListJobsComponent } from './jobs/job-list.component'
+import { HomeComponent } from './home/home.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ListJobsComponent } from './jobs/job-list.component'
     EmployersListComponent,
     FreelancerShortComponent,
     EmployerShortComponent,
-    ListJobsComponent
+    ListJobsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
