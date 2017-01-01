@@ -18,6 +18,7 @@ import { FreelancerShortComponent } from './pages/freelancers-list/freelancer-sh
 import { EmployerShortComponent } from './pages/employers-list/employers-short/employer-short.component';
 import { ListJobsComponent } from './jobs/job-list.component'
 import { HomeComponent } from './home/home.component'
+import { JobCreateComponent } from './jobs/job-create.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component'
     FreelancerShortComponent,
     EmployerShortComponent,
     ListJobsComponent,
-    HomeComponent
+    HomeComponent,
+    JobCreateComponent
   ],
   imports: [
     BrowserModule,
