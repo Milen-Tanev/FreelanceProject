@@ -10,7 +10,8 @@ const kinveyAppDataUrl = 'https://baas.kinvey.com/appdata/kid_ryr_EhREx';
 const kinveyUsersProfileColleciton = '/usersProfile';
 const kinveyJobsCollection = '/jobs';
 const kinveyJobsApplicationsCollection = '/jobsApplications';
+const kinveyCommentsCollection = '/comments';
 
 export { kinveyKey, kinveySecret, kinveyHeaderKey, kinveyUserAuthorization, 
     kinveyBasicHeaders, kinveyAppDataUrl, guestUserAuthToken, kinveyUsersProfileColleciton,
-    kinveyJobsCollection, kinveyJobsApplicationsCollection };
+    kinveyJobsCollection, kinveyJobsApplicationsCollection, kinveyCommentsCollection };
