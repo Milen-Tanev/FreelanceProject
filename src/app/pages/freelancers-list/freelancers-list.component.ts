@@ -16,6 +16,7 @@ export class FreelancersListComponent implements OnInit {
   freelancers: UserProfile[] = [];
   role: string = 'Freelancer';
   authtoken: string = '';
+  filterFreelancers:string
 
   constructor(private usersProfileService: UsersProfileService) { }
 

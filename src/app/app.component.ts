@@ -15,6 +15,7 @@ import {JobListService} from './jobs-list/job-list.service'
 })
 export class AppComponent {
   CheckForUserDirective;
+  private filterFreelancers:string;
   private username: string = sessionStorage.getItem('username') || 'Account';
   loginAuth(): boolean {
     let authToken = sessionStorage.getItem('authtoken');
@@ -32,4 +33,5 @@ export class AppComponent {
       return true;
     }
   }
+  
 }

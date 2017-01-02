@@ -1,4 +1,7 @@
 <h3>Employers</h3>
+<div class="col-xs-2">
+    <input class="search-box" [(ngModel)]='filterBy' type="text" placeholder="search for freelancers">
+</div>
 <table class='table table-hover'>
     <thead>
         <tr>
@@ -16,16 +19,16 @@
             </th>
             <th>
                 E-mail
-            </th>     
+            </th>
             <th>
                 Description
             </th>
             <th>
                 Role
-            </th>  
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr employer-profile-short *ngFor="let employer of employers" [employer-profile-short] = "employer"></tr>
+        <tr employer-profile-short *ngFor="let employer of employers | employersFilter:filterBy" [employer-profile-short]="employer"></tr>
     </tbody>
 </table>
