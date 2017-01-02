@@ -1,0 +1,18 @@
+.container {
+    width: 100%;
+    overflow: auto;
+}
+.form-group {
+    width: 100%;
+    overflow: auto;
+}
+.col-sm-8 {
+    display: block;
+}
+
+.btn .btn-default .preview-add-button {
+    display: block;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}

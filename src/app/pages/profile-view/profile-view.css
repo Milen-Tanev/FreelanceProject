@@ -39,3 +39,8 @@
 .position-centre {
     text-align: center;
 }
+
+add-comment {
+    position: relative;
+    width: 50%;
+}

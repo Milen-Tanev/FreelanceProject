@@ -2,7 +2,7 @@
     <img [src]="">
 </td>
 <td>
-    <p><a [routerLink]="'/' + freelancer.username">{{freelancer.username}}</a><p>
+    <p><a [routerLink]="'/user/' + freelancer._acl.creator">{{freelancer.username}}</a><p>
 </td>
 <td>
     {{freelancer.firstName}}

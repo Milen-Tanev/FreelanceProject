@@ -5,13 +5,13 @@
                 <div class="panel-body form-horizontal">
                   <form class="form-horizontal" #createApplicationForm="ngForm" (ngSubmit)="createJobApplication()" method="post" action="#">
                     <div class="form-group">
-                        <label for="Job_Short_Details" class="col-sm-3 control-label">Application description</label>
+                        <label for="Job_Short_Details" class="col-sm-8">Application description</label>
                         <div class="col-sm-8">
                            <textarea class="form-control" name="description"[(ngModel)] = "jobApplication.description"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-12 text-right">
+                        <div class="col-sm-12 text-left">
                             <button type="submit" class="btn btn-default preview-add-button">
                                 <span class="glyphicon" id="submit_button"></span> Submit
                             </button>
