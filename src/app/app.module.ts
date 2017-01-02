@@ -8,7 +8,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { CheckForUserDirective } from './directives/checkForUserDirective';
 import { CheckUserRoleDirective } from './directives/checkUserRoleDirective';
 
-import { UsersService, UsersProfileService, JobsService, JobApplicationService } from './services/index';
+import { UsersService, UsersProfileService, JobsService, JobApplicationService, CommentsService } from './services/index';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent, LoginComponent } from './pages/users/index';
@@ -27,7 +27,8 @@ import { JobApplicationFormComponent } from './jobs/job-application-form/job-app
 import { JobFilterPipe } from './custom-pipes/job-filter.pipe';
 import { FreelancersFilterPipe } from './custom-pipes/freelancers-filter.pipe';
 import { ViewProfileComponent } from './pages/profile-view/profile-view';
-import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
+import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe';
+import { CommentComponent } from './pages/comment-create/comment-create.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
     FreelancersFilterPipe,
     EmployersFilterPipe,
     CheckForUserDirective,
-    CheckUserRoleDirective
+    CheckUserRoleDirective,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
     UsersProfileService,
     JobsService,
     JobApplicationService,
-    AuthGuard
+    AuthGuard,
+    CommentsService
   ],
   bootstrap: [AppComponent]
 })

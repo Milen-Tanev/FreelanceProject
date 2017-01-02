@@ -11,8 +11,8 @@ headers.append(kinveyHeaderKey, kinveyBasicHeaders.Authorization);
 export class CommentsService{
     constructor(private http: Http){}
 
-    createComment(comment: Comment){
+    createComment(authtoken: string, comment: Comment){
         return this.http.post(kinveyAppDataUrl + kinveyCommentsCollection , comment, {headers: headers})
     }
-    
+
 }
