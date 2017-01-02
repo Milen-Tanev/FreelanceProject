@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class JobListService {
     private jobsUrl: string = 'https://baas.kinvey.com/appdata/kid_ryr_EhREx/jobs/'
+    private filterBy:string;
 
     constructor(private http: Http) {
 

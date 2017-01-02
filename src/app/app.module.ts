@@ -19,6 +19,7 @@ import { EmployerShortComponent } from './pages/employers-list/employers-short/e
 import { ListJobsComponent } from './jobs-list/job-list.component'
 import { HomeComponent } from './home/home.component'
 import { JobCreateComponent } from './jobs-create/job-create.component'
+import { JobFilterPipe } from './custom-pipes/job-filter.pipe'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { JobCreateComponent } from './jobs-create/job-create.component'
     EmployerShortComponent,
     ListJobsComponent,
     HomeComponent,
-    JobCreateComponent
+    JobCreateComponent,
+    JobFilterPipe
   ],
   imports: [
     BrowserModule,

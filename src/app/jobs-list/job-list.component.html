@@ -1,6 +1,10 @@
 <div id='wrapper'>
+    //
     <h1>Available jobs:</h1>
-    <div *ngFor='let job of jobs'>
+    <div class="col-xs-2">
+        <input class="search-box" [(ngModel)]='filterBy' id="ex1" type="text" placeholder="search for jobs">
+    </div>
+    <div *ngFor='let job of jobs | jobFilter:filterBy'>
         <a href='#'>{{job.title}}</a>
         <p>{{job.description}}</p>
         <ul>
