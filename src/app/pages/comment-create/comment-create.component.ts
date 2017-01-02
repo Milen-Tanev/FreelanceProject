@@ -7,7 +7,7 @@ import { CommentsService } from '../../services/index'
     moduleId: 'module.id',
     selector: '[app-create-comment]',
     templateUrl: './comment-create.component.html',
-    styleUrls: []
+    styleUrls: ['./comment-create.component.css']
 })
 
 export class CommentComponent implements OnInit {
