@@ -1,10 +1,12 @@
 <div id='wrapper'>
-    //
     <h1>Available jobs:</h1>
     <div class="form-group">
         <input class="search-box" [(ngModel)]='filterBy' id="ex1" type="text" placeholder="search for jobs">
     </div>
-    <div *ngFor='let job of jobs | jobFilter:filterBy'>
+    <div class="form-group">
+        <input class="search-box" [(ngModel)]='tagsFilter' id="ex2" type="text" placeholder="search for tags">
+    </div>
+    <div class='content' *ngFor='let job of jobs | jobFilter:filterBy | tagFilter:tagsFilter'>
         <a [routerLink]="'/job/' + job._id">{{job.title}}</a>
         <p>{{job.description}}</p>
         <ul>

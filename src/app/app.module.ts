@@ -25,6 +25,7 @@ import { JobFilterPipe } from './custom-pipes/job-filter.pipe';
 import { FreelancersFilterPipe } from './custom-pipes/freelancers-filter.pipe';
 import { ViewProfile } from './pages/profile-view/profile-view';
 import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
+import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
     JobFilterPipe,
     ViewProfile,
     FreelancersFilterPipe,
-    EmployersFilterPipe
+    EmployersFilterPipe,
+    TagFilterPipe
   ],
   imports: [
     BrowserModule,

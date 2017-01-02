@@ -13,7 +13,7 @@ h1 {
     text-align: center;
 }
 
-#wrapper div {
+#wrapper .content {
     border-bottom: 1px solid grey;
     padding-bottom: 5px;
 }
