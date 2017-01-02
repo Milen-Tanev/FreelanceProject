@@ -10,6 +10,7 @@ import { ListJobsComponent } from './jobs-list/job-list.component';
 import { HomeComponent } from './home/home.component';
 import { JobCreateComponent } from './jobs-create/job-create.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
+import { ViewProfile } from './pages/profile-view/profile-view';
 
 const routes: Routes = [
   {
@@ -50,6 +51,11 @@ const routes: Routes = [
   {
     path: 'create',
     component: JobCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile',
+    component: ViewProfile,
     canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }
