@@ -37,7 +37,7 @@ export class UsersProfileService {
     let userCredentials = kinveyUserAuthorization + authtoken;
     let userProfileHeaders = new Headers();
     userProfileHeaders.append(kinveyHeaderKey, userCredentials);
-    return this.http.get(kinveyAppDataUrl + creatorIdQuery + userId + '}', { headers: userProfileHeaders })
+  return this.http.get(kinveyAppDataUrl + kinveyUsersProfileColleciton +`/?query={"_acl.creator":"${userId}"}`, { headers: userProfileHeaders })
       .map((res: Response) => {
         return res.json();
       });
