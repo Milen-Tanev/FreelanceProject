@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Create a job</h2>
+    <form>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input [(ngModel)]='title' name='title' type="text" class="form-control" id="title" required placeholder="Enter the title of the job offer">
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea [(ngModel)]='description' name='description' class="form-control" rows="5" id="description" required placeholder="Enter description of the job"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Tags:</label>
+            <select [(ngModel)]='tag1' name='tag1' class="form-control">
+                <option *ngFor="let tag of tags" name='tag1' [value]="tag1">{{tag}}</option>
+            </select>
+            <select [(ngModel)]='tag2' name='tag2' class="form-control">
+                <option *ngFor="let tag of tags" name='tag2' [value]="tag2">{{tag}}</option>
+            </select>
+            <select [(ngModel)]='tag3' name='tag3' class="form-control">
+                <option *ngFor="let tag of tags"  name='tag3'[value]="tag3">{{tag}}</option>
+            </select>
+            <select [(ngModel)]='tag4' name='tag4' class="form-control">
+                <option *ngFor="let tag of tags" name='tag4' [value]="tag4">{{tag}}</option>
+            </select>
+            <select [(ngModel)]='tag5' name='tag5' class="form-control">
+                <option *ngFor="let tag of tags" name='tag5' [value]="tag5">{{tag}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button (click)='createJob()' type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

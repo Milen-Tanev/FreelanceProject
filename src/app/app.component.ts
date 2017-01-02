@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UsersService } from './services/index';
 import { CheckForUserDirective } from './directives/checkForUserDirective';
-import {JobListService} from './jobs/job-list.service'
+import {JobListService} from './jobs-list/job-list.service'
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,5 @@
 export interface IJob {
     title:string
     description:string
-    tags:string[]
+    tags?:string[]
 }
