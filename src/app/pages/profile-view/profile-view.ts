@@ -33,6 +33,15 @@ export class ViewProfileComponent implements OnInit {
         }
     }
 
+    checkForRole(): boolean {
+    let role = sessionStorage.getItem('role');
+    if (role === 'Freelancer') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
     viewProfileById() {
         if(sessionStorage.getItem('id')) {
             this.authToken = sessionStorage.getItem('authtoken');

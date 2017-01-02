@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { UsersService } from './services/index';
+
 import { CheckForUserDirective } from './directives/checkForUserDirective';
-import {JobListService} from './jobs-list/job-list.service'
+import { CheckUserRoleDirective } from './directives/checkUserRoleDirective';
+import { UsersService } from './services/index';
+
+import {JobListService} from './jobs-list/job-list.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +13,12 @@ import {JobListService} from './jobs-list/job-list.service'
   styleUrls: [
     './app.component.css'
   ],
-  providers:[JobListService]
-  
+  providers: [JobListService]
 })
 export class AppComponent {
   CheckForUserDirective;
-  private filterFreelancers:string;
+  CheckUserRoleDirective;
+  private filterFreelancers: string;
   private username: string = sessionStorage.getItem('username') || 'Account';
   loginAuth(): boolean {
     let authToken = sessionStorage.getItem('authtoken');
@@ -33,5 +36,4 @@ export class AppComponent {
       return true;
     }
   }
-  
 }

@@ -4,14 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RoutingModule } from './app-routing.module';
 
+import { AuthGuard } from './guards/auth.guard';
+import { CheckForUserDirective } from './directives/checkForUserDirective';
+import { CheckUserRoleDirective } from './directives/checkUserRoleDirective';
+
 import { UsersService, UsersProfileService, JobsService, JobApplicationService } from './services/index';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent, LoginComponent } from './pages/users/index';
 import { LoginButtons } from './pages/navbarUI/login-buttons';
 import { ProfileButtonsComponent } from './pages/navbarUI/profile-buttons';
-import { AuthGuard } from './guards/auth.guard';
-import { CheckForUserDirective } from './directives/checkForUserDirective';
+
 import { FreelancersListComponent } from './pages/freelancers-list/freelancers-list.component';
 import { EmployersListComponent } from './pages/employers-list/employers-list.component';
 import { FreelancerShortComponent } from './pages/freelancers-list/freelancer-short/freelancer-short.component';
@@ -33,7 +36,6 @@ import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
     LoginComponent,
     LoginButtons,
     ProfileButtonsComponent,
-    CheckForUserDirective,
     FreelancersListComponent,
     EmployersListComponent,
     FreelancerShortComponent,
@@ -43,10 +45,12 @@ import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
     JobCreateComponent,
     JobDetailComponent,
     JobApplicationFormComponent,
-    JobFilterPipe,
     ViewProfileComponent,
+    JobFilterPipe,
     FreelancersFilterPipe,
-    EmployersFilterPipe
+    EmployersFilterPipe,
+    CheckForUserDirective,
+    CheckUserRoleDirective
   ],
   imports: [
     BrowserModule,
