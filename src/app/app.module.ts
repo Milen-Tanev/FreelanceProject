@@ -23,7 +23,7 @@ import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { JobApplicationFormComponent } from './jobs/job-application-form/job-application-form.component';
 import { JobFilterPipe } from './custom-pipes/job-filter.pipe';
 import { FreelancersFilterPipe } from './custom-pipes/freelancers-filter.pipe';
-import { ViewProfile } from './pages/profile-view/profile-view';
+import { ViewProfileComponent } from './pages/profile-view/profile-view';
 import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
 
 @NgModule({
@@ -44,7 +44,7 @@ import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe'
     JobDetailComponent,
     JobApplicationFormComponent,
     JobFilterPipe,
-    ViewProfile,
+    ViewProfileComponent,
     FreelancersFilterPipe,
     EmployersFilterPipe
   ],

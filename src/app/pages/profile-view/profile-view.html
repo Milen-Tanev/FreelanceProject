@@ -30,7 +30,7 @@
                                 </tbody>
                             </table>
                         </div>
-                                         <div class="position-centre">
+                            <div class="position-centre" *appIsLogged = "profileAuth()">
                                 <a href="#" class="btn btn-primary" *ngIf="userProfile.role=='Freelancer'">Application history</a>
                                 <a href="#" class="btn btn-primary" *ngIf="userProfile.role=='Employer'">Job offers history</a>
                             </div>

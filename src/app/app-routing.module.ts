@@ -10,7 +10,7 @@ import { ListJobsComponent } from './jobs-list/job-list.component';
 import { HomeComponent } from './home/home.component';
 import { JobCreateComponent } from './jobs-create/job-create.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
-import { ViewProfile } from './pages/profile-view/profile-view';
+import { ViewProfileComponent } from './pages/profile-view/profile-view';
 
 const routes: Routes = [
   {
@@ -30,8 +30,8 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'user/profile',
-    component: RegistrationComponent,
+    path: 'user/:id',
+    component: ViewProfileComponent,
   },
   {
     path: 'jobs',
@@ -42,6 +42,10 @@ const routes: Routes = [
     component: JobDetailComponent,
   },
   {
+    path: 'user/:id',
+    component: JobDetailComponent,
+  },
+  {
     path: 'home',
     component: HomeComponent
   },
@@ -49,13 +53,13 @@ const routes: Routes = [
     path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
-    path: 'create',
+    path: 'create-job',
     component: JobCreateComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'profile',
-    component: ViewProfile,
+    path: 'profile/:id',
+    component: ViewProfileComponent,
     canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }

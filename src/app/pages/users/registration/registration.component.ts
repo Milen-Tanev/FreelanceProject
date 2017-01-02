@@ -15,6 +15,7 @@ import { UserProfile } from '../../../../models/user-profile.model';
 export class RegistrationComponent implements OnInit {
   model: User;
   userProfile: UserProfile;
+  description: string;
 
   roles = ['Freelancer', 'Employer'];
 
@@ -24,6 +25,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     this.model = new User('', '', '', '', '', '', '', '');
     this.userProfile = new UserProfile('', '', '', '', '', '', '', '');
+    this.description = '';
   }
 
   register() {
@@ -38,7 +40,7 @@ export class RegistrationComponent implements OnInit {
         this.userProfile.lastName = this.model.lastName;
         this.userProfile.email = this.model.email;
         this.userProfile.role = this.model.role;
-        this.userProfile.description = '';
+        this.userProfile.description = this.description;
         this.userProfile.companyName = this.model.companyName;
         this.userProfile.country = this.model.country;
         console.log(this.userProfile);

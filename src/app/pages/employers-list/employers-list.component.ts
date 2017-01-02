@@ -13,7 +13,7 @@ import { guestUserAuthToken } from '../../../shared/constants';
   styleUrls: ['./employers-list.component.css'],
 })
 export class EmployersListComponent implements OnInit {
-  //private filterByRolePile: FilterByRolePipe = new FilterByRolePipe();
+
   employers: UserProfile[] = [];
   role: string = 'Employer';
   authtoken: string = '';

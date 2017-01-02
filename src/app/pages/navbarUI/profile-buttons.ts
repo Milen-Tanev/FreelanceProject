@@ -9,7 +9,8 @@ import { UsersService } from '../../services/index';
 })
 
 export class ProfileButtonsComponent {
-    constructor(private userService: UsersService) { }
+  userId: string;
+    constructor(private userService: UsersService) { this.userId = sessionStorage.getItem('id'); }
   logout() {
     console.log('logout works');
     let authToken = sessionStorage.getItem('authtoken');
