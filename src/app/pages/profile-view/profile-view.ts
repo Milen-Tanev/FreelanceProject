@@ -27,19 +27,15 @@ export class ViewProfile implements OnInit{
         this.userId = sessionStorage.getItem('id');
         this.usersPorfileService.getUserById(this.authToken, this.userId)
             .subscribe(result => {
-            console.log(result);
-            alert('Status: ' + result.status);
-            // if (result.status === 201) {
-            //     this.userProfile.username = this.model.username;
-            //     this.userProfile.firstName = this.model.firstName;
-            //     this.userProfile.lastName = this.model.lastName;
-            //     this.userProfile.email = this.model.email;
-            //     this.userProfile.role = this.model.role;
-            //     this.userProfile.description = '';
-            //     this.userProfile.companyName = this.model.companyName;
-            //     this.userProfile.country = this.model.country;
-            //     console.log(this.userProfile);
-            // }
-    });
+                this.userProfile.username = result[0].username;
+                this.userProfile.firstName = result[0].firstName;
+                this.userProfile.lastName = result[0].lastName;
+                this.userProfile.email = result[0].email;
+                this.userProfile.role = result[0].role;
+                this.userProfile.description = result[0].description;
+                this.userProfile.companyName = result[0].companyName;
+                this.userProfile.country = result[0].country;
+                console.log(this.userProfile)
+            });
   }
 }

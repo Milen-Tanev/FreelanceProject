@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import { UserProfile } from '../../models/user-profile.model';
 import {
   kinveyKey, kinveySecret, kinveyHeaderKey, kinveyUserAuthorization, kinveyBasicHeaders,
-  guestUserAuthToken, kinveyAppDataUrl, kinveyUsersProfileColleciton, creatorIdQuery
+  guestUserAuthToken, kinveyAppDataUrl, kinveyUsersProfileColleciton
 } from '../../shared/constants';
 
 
