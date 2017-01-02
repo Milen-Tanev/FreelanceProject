@@ -9,6 +9,7 @@ import { EmployersListComponent } from './pages/employers-list/employers-list.co
 import { ListJobsComponent } from './jobs-list/job-list.component';
 import { HomeComponent } from './home/home.component';
 import { JobCreateComponent } from './jobs-create/job-create.component';
+import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'jobs',
     component: ListJobsComponent
+  },
+  {
+    path: 'job/:id',
+    component: JobDetailComponent,
   },
   {
     path: 'home',

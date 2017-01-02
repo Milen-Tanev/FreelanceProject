@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
 import { UsersProfileService } from '../../services/index';
+//import { FilterByRolePipe } from '../../pipes/filter-by-role.pipe';
 
 import { UserProfile } from '../../../models/user-profile.model';
 import { guestUserAuthToken } from '../../../shared/constants';
@@ -9,10 +10,12 @@ import { guestUserAuthToken } from '../../../shared/constants';
 @Component({
   moduleId: 'module.id',
   templateUrl: './employers-list.component.html',
-  styleUrls: ['./employers-list.component.css']
+  styleUrls: ['./employers-list.component.css'],
 })
 export class EmployersListComponent implements OnInit {
+  //private filterByRolePile: FilterByRolePipe = new FilterByRolePipe();
   employers: UserProfile[] = [];
+  role: string = 'Employer';
   authtoken: string = '';
 
   constructor(private usersProfileService: UsersProfileService) { }
@@ -21,7 +24,10 @@ export class EmployersListComponent implements OnInit {
     this.usersProfileService.getAllUsersProfile(authtoken)
     .subscribe((res) => {
       for (let i of res) {
-        this.employers.push(i);
+          if (i.role === this.role) {
+          this.employers.push(i);
+        }
+
       }
       console.log(res);
       console.log(this.employers);
@@ -36,5 +42,4 @@ export class EmployersListComponent implements OnInit {
     }
     this.getUsers(this.authtoken);
   }
-
 }

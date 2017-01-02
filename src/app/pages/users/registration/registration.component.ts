@@ -44,6 +44,8 @@ export class RegistrationComponent implements OnInit {
         console.log(this.userProfile);
         sessionStorage.setItem('username', res.username);
         sessionStorage.setItem('authtoken', res._kmd.authtoken);
+        sessionStorage.setItem('id', res._id);
+        sessionStorage.setItem('role', res.role);
         this.usersPorfileService.createUserProfile(this.userProfile, res._kmd.authtoken)
         .subscribe((r) => { console.log(r); });
       }

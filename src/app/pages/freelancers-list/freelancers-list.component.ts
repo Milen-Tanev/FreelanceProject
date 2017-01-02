@@ -14,6 +14,7 @@ import { guestUserAuthToken } from '../../../shared/constants';
 export class FreelancersListComponent implements OnInit {
 
   freelancers: UserProfile[] = [];
+  role: string = 'Freelancer';
   authtoken: string = '';
 
   constructor(private usersProfileService: UsersProfileService) { }
@@ -22,7 +23,9 @@ export class FreelancersListComponent implements OnInit {
     this.usersProfileService.getAllUsersProfile(authtoken)
     .subscribe((res) => {
       for (let i of res) {
+        if (i.role === this.role) {
         this.freelancers.push(i);
+        }
       }
       console.log(res);
       console.log(this.freelancers);

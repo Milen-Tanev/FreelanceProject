@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+        <div class="col-sm-7">            
+                <div class="panel-body form-horizontal">
+                         <h3>Employer:</h3> 
+                        <p>{{job.creatorUsername}}</p>
+                        <h3>Job: </h3>
+                        <p>{{job.title}}</p>
+                        <h3> Description: </h3>
+                        <p>{{job.description}}</p>
+                        <ul>
+                                <li *ngFor='let tag of job.tags'>{{tag}}</li>
+                        </ul>  
+                </div>
+        </div>
+	</div>
+        <div *ngIf="userRole === 'Freelancer'">
+            <div app-job-application-form *appIsLogged = "profileAuth()" [app-job-application-form] = "job"></div>     
+        </div>
+
+</div>

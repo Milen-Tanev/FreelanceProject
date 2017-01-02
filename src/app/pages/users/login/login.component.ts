@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
       let res = result.json();
       sessionStorage.setItem('username', res.username);
       sessionStorage.setItem('authtoken', res._kmd.authtoken);
+      sessionStorage.setItem('id', res._id);
+      sessionStorage.setItem('role', res.role);
       console.log(res);
       alert('Status: ' + res.status);
     });
