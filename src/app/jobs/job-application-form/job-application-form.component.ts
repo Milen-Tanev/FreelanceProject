@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { JobApplicationService } from '../../services/index';
 
-import {} from '../../'
 import { JobApplication } from '../../../models/job-application.model';
 
 @Component({

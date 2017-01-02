@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import { ActivatedRoute } from '@angular/router';
 
 import { JobsService } from '../../services/index';
-import {IJob} from '../../../interfaces/IJob';
+import {Job } from '../../../models/job-model';
 import { guestUserAuthToken } from '../../../shared/constants';
 
 @Component({
@@ -14,7 +14,7 @@ import { guestUserAuthToken } from '../../../shared/constants';
   styleUrls: ['./job-detail.component.css']
 })
 export class JobDetailComponent implements OnInit {
-  job: any =  {'jobId': '', 'title': '', 'description': '', 'tags': '', 'creatorUsername': '', 'creatorId': '' };
+  job: Job = new Job( '', '', [], '', '', ' ', new Date() );
   jobId: string = '';
   userRole: string = '';
   authtoken: string = '';
@@ -26,7 +26,7 @@ export class JobDetailComponent implements OnInit {
         this.job.title = res.title;
         this.job.description = res.description;
         this.job.tags = res.tags;
-        this.job.jobId = this.jobId;
+        this.job.id = this.jobId;
         this.job.creatorId = res._acl.creator;
         this.job.creatorUsername = res.creatorUsername;
     });
