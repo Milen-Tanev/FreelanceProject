@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { JobCreateComponent } from './jobs-create/job-create.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { ViewProfileComponent } from './pages/profile-view/profile-view';
+import { JobApplicationHistoryComponent } from './job-application-history/application-history.component'
 
 const routes: Routes = [
   {
@@ -60,6 +61,11 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     component: ViewProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'view-applications',
+    component: JobApplicationHistoryComponent,
     canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }
