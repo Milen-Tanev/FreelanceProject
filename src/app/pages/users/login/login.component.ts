@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('role', res.role);
       console.log(res);
       alert('Status: ' + res.status);
-      this.router.navigate(['/home']);
+      this.router.navigate(['#']);
     });
   }
 }

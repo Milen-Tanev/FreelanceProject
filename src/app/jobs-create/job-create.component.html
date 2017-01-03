@@ -10,14 +10,14 @@
             <textarea [(ngModel)]='description' name='description' class="form-control" rows="5" id="description" required placeholder="Enter description of the job"></textarea>
 		<div class="form-group">	
 			<label for="applyBeforeDate">Valid until: </label>
-			<input [(ngModel)]='applyBeforeDate'  name = "applyBeforeDate" type="date" class="form-control" required placeholder="Select date">
+			<input [(ngModel)]='applyBeforeDate'  required name = "applyBeforeDate" type="date" class="form-control" required placeholder="Select date">
 		</div>
 		</div>
 	    <div class="form-group">							
 		    <div class="cols-sm-10">
 			    <div class="input-group">
 				    <label for="tag1">Select tag</label>
-					    <select [(ngModel)]="tag1" name="tag1" class="form-control">							
+					    <select [(ngModel)]="tag1" required name="tag1" class="form-control">							
 						    <option *ngFor="let tag of tags" [value]="tag">{{tag}}</option>									
 						</select>
 				</div>
