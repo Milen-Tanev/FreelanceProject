@@ -30,6 +30,7 @@ import { FreelancersFilterPipe } from './custom-pipes/freelancers-filter.pipe';
 import { ViewProfileComponent } from './pages/profile-view/profile-view';
 import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe';
 import { CommentComponent } from './pages/comment-create/comment-create.component';
+import { TagFilterPipe } from './custom-pipes/tag-filter.pipe'
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CommentComponent } from './pages/comment-create/comment-create.componen
     CheckForUserDirective,
     CheckUserRoleDirective,
     CheckForClickedButtonDirective,
-    CommentComponent
+    CommentComponent,
+    TagFilterPipe
   ],
   imports: [
     BrowserModule,
