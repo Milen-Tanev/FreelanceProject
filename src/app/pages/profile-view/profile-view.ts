@@ -15,6 +15,7 @@ export class ViewProfileComponent implements OnInit {
     userProfile: UserProfile;
     authToken: string;
     userId: string;
+    isNotChecked: boolean;
 
     constructor(private activatedRoute: ActivatedRoute, private usersPorfileService: UsersProfileService) { this.authToken = guestUserAuthToken; }
 
@@ -22,6 +23,7 @@ export class ViewProfileComponent implements OnInit {
         this.userProfile = new UserProfile('', '', '', '', '', '', '', '');
         this.authToken = guestUserAuthToken;
         this.viewProfileById();
+        this.isNotChecked = true;
     }
 
     profileAuth(): boolean {
@@ -34,16 +36,36 @@ export class ViewProfileComponent implements OnInit {
     }
 
     checkForRole(): boolean {
-    let role = sessionStorage.getItem('role');
-    if (role === 'Freelancer') {
-      return true;
-    } else {
-      return false;
+        let role = sessionStorage.getItem('role');
+        if (role === 'Freelancer') {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
+
+    checkForClickedButton() {
+        if (this.isNotChecked) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    checkIfUserProfile() {
+        if (sessionStorage.getItem('id') === this.userId) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    setIsNotChecked() {
+        this.isNotChecked = !this.isNotChecked;
+    }
 
     viewProfileById() {
-        if(sessionStorage.getItem('id')) {
+        if (sessionStorage.getItem('id')) {
             this.authToken = sessionStorage.getItem('authtoken');
         }
         this.userId = this.activatedRoute.snapshot.params['id'];

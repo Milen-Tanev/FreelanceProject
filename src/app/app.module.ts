@@ -7,6 +7,7 @@ import { RoutingModule } from './app-routing.module';
 import { AuthGuard } from './guards/auth.guard';
 import { CheckForUserDirective } from './directives/checkForUserDirective';
 import { CheckUserRoleDirective } from './directives/checkUserRoleDirective';
+import { CheckForClickedButtonDirective } from './directives/checkForCheckedButtonDirective';
 
 import { UsersService, UsersProfileService, JobsService, JobApplicationService, CommentsService } from './services/index';
 
@@ -29,7 +30,6 @@ import { FreelancersFilterPipe } from './custom-pipes/freelancers-filter.pipe';
 import { ViewProfileComponent } from './pages/profile-view/profile-view';
 import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe';
 import { CommentComponent } from './pages/comment-create/comment-create.component';
-import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
     LoginComponent,
     LoginButtons,
     ProfileButtonsComponent,
-    CheckForUserDirective,    
     FreelancersListComponent,
     EmployersListComponent,
     FreelancerShortComponent,
@@ -51,11 +50,10 @@ import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
     ViewProfileComponent,
     JobFilterPipe,
     FreelancersFilterPipe,
-    JobFilterPipe,
     EmployersFilterPipe,
-    TagFilterPipe,
     CheckForUserDirective,
     CheckUserRoleDirective,
+    CheckForClickedButtonDirective,
     CommentComponent
   ],
   imports: [

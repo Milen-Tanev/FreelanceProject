@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { CheckForClickedButtonDirective } from './directives/checkForCheckedButtonDirective';
 import { CheckForUserDirective } from './directives/checkForUserDirective';
 import { CheckUserRoleDirective } from './directives/checkUserRoleDirective';
 import { UsersService } from './services/index';
@@ -18,6 +19,7 @@ import {JobListService} from './jobs-list/job-list.service';
 export class AppComponent {
   CheckForUserDirective;
   CheckUserRoleDirective;
+  CheckForCheckedButtonDirective;
   private filterFreelancers: string;
   private username: string = sessionStorage.getItem('username') || 'Account';
   loginAuth(): boolean {

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Router } from '@angular/router';
 
 import { JobApplicationService } from '../../services/index';
 
@@ -13,17 +14,14 @@ import { JobApplication } from '../../../models/job-application.model';
 export class JobApplicationFormComponent implements OnInit {
   @Input('app-job-application-form') job: any;
   private jobApplication: JobApplication;
-  constructor(private jobsApplicationService: JobApplicationService) { }
+  constructor(private jobsApplicationService: JobApplicationService, private router: Router) { }
 
   ngOnInit() {
     this.jobApplication = new JobApplication('', '', '', '', '', '', '');
     console.log(this.job);
   }
-    createJobApplication() {
+   createJobApplication() {
       let authtoken = sessionStorage.getItem('authtoken');
-      if (authtoken === null) {
-        //redirect to login
-      } else {
         this.jobApplication.jobId = this.job.jobId;
         this.jobApplication.jobTitle = this.job.title;
         this.jobApplication.employerId = this.job.creatorId;
@@ -31,14 +29,11 @@ export class JobApplicationFormComponent implements OnInit {
         this.jobApplication.freelancerId = sessionStorage.getItem('id');
         this.jobApplication.freelancerUsername = sessionStorage.getItem('username');
 
-        //console.log(this.jobApplication);
         this.jobsApplicationService.createJobsApplication(this.jobApplication, authtoken)
         .subscribe((res) => {
-          alert(res.status);
-          console.log(res);
-           //redirect to job profile;
+            alert(res.status);
+            console.log(res);
+            this.router.navigate(['/home']);
         });
       }
     }
-
-  }

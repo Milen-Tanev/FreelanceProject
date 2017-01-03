@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   model: any;
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit() {
     this.model = { 'username': '', 'password': ''};
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('role', res.role);
       console.log(res);
       alert('Status: ' + res.status);
+      this.router.navigate(['/home']);
     });
   }
 }

@@ -36,14 +36,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer">
-                    <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                    <span class="pull-right">
-                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
-                    </span>
-                    <div app-create-comment *appIsLogged = "profileAuth()" [app-create-comment] = "userProfile"></div>
-                </div>
+                <div class="panel-footer" *appIsLogged = "profileAuth()">
+                    <a (click)="setIsNotChecked()" *ngIf="!checkIfUserProfile()" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary" ><i class="glyphicon glyphicon-envelope"></i></a>
+                    <a href="edit.html" *ngIf="checkIfUserProfile()" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a *ngIf="checkIfUserProfile()" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                     <div *isButtonClicked="checkForClickedButton()">
+                        <div app-create-comment *appIsLogged = "profileAuth()" [app-create-comment] = "userProfile"></div>
+                    </div>
             </div>
         </div>
     </div>

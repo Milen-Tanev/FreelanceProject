@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {Router } from '@angular/router';
 
-import { Comment } from '../../../models/comment.model'
-import { CommentsService } from '../../services/index'
+
+import { Comment } from '../../../models/comment.model';
+import { CommentsService } from '../../services/index';
 
 @Component({
     moduleId: 'module.id',
@@ -17,7 +19,7 @@ export class CommentComponent implements OnInit {
     private addresseeId: string;
     private comment: Comment;
 
-    constructor(private commentsService: CommentsService) { }
+constructor(private commentsService: CommentsService, private router: Router ) { }
 
     ngOnInit() {
         this.senderId = '';
@@ -31,7 +33,7 @@ export class CommentComponent implements OnInit {
         this.senderId = sessionStorage.getItem('id');
         this.comment = new Comment(this.senderId, this.addresseeId, this.content);
         this.commentsService.createComment(authtoken, this.comment)
-            .subscribe(res => console.log(res));
+            .subscribe(() => this.router.navigate(['/home']));
     }
     profileAuth(): boolean {
         let authToken = sessionStorage.getItem('authtoken');

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router } from '@angular/router';
 
 import { Job } from '../../models/job-model';
 
@@ -27,7 +28,7 @@ export class JobCreateComponent {
     jobTags: string[];
     job: Job;
 
-    constructor(private jobsService: JobsService) { }
+        constructor(private jobsService: JobsService, private router: Router) { }
 
 
     createJob() {
@@ -46,7 +47,7 @@ export class JobCreateComponent {
         this.jobsService.createJob(this.job, this.authtoken)
         .subscribe(result => {
             alert(result.status);
+            this.router.navigate(['/home']);
         });
-        //redirect to jobs history
     }
 }
