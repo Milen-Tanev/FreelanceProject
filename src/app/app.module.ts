@@ -32,6 +32,8 @@ import { CommentDetailsComponent } from './pages/comments-detail/comments-detail
 import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe';
 import { CommentComponent } from './pages/comment-create/comment-create.component';
 import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
+import { JobApplicationHistoryComponent } from './job-application-history/application-history.component'
+import { JobHistoryService} from './services/job-history.service'
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
     CheckForClickedButtonDirective,
     CommentComponent,
     CommentDetailsComponent,
-    TagFilterPipe
+    TagFilterPipe,
+    JobApplicationHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
     JobsService,
     JobApplicationService,
     AuthGuard,
-    CommentsService
+    CommentsService,
+    JobHistoryService
   ],
   bootstrap: [AppComponent]
 })
