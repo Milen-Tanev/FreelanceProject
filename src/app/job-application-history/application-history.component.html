@@ -1,0 +1,25 @@
+<div id='wrapper'>
+    <h1>Recieved applications:</h1>
+    <table class='table table-hover'>
+    <thead>
+        <tr>
+            <th>
+                Job Title
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Freelancer username
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr employer-profile-short *ngFor="let application of jobApplications">
+            <td>{{application.jobTitle}}</td>
+            <td>{{application.description}}</td>
+            <td>{{application.freelancerUsername}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
