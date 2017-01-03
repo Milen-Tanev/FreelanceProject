@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('id', res._id);
       sessionStorage.setItem('role', res.role);
       console.log(res);
-      alert('Status: ' + res.status);
-      this.router.navigate(['#']);
+      alert("You are now login");
+      this.router.navigate(['/home']);
     });
   }
 }

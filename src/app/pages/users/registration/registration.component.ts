@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
 
   roles = ['Freelancer', 'Employer'];
 
-  constructor(private userService: UsersService, private usersPorfileService: UsersProfileService) { }
+  constructor(private userService: UsersService, private usersPorfileService: UsersProfileService, private router: Router) { }
 
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class RegistrationComponent implements OnInit {
     user.subscribe((result) => {
       let res = result.json();
       console.log(res);
-      alert('Status: ' + result.status);
+      alert("Welcome to Freelance Project!");
       if (result.status === 201) {
         this.userProfile.username = this.model.username;
         this.userProfile.firstName = this.model.firstName;
@@ -49,7 +49,9 @@ export class RegistrationComponent implements OnInit {
         sessionStorage.setItem('id', res._id);
         sessionStorage.setItem('role', res.role);
         this.usersPorfileService.createUserProfile(this.userProfile, res._kmd.authtoken)
-        .subscribe((r) => { console.log(r); });
+        .subscribe(() => {
+          this.router.navigate(['/home']);
+        });
       }
     });
   }

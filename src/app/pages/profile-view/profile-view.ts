@@ -74,7 +74,6 @@ export class ViewProfileComponent implements OnInit {
         this.userId = this.activatedRoute.snapshot.params['id'];
         this.usersPorfileService.getUserById(this.authToken, this.userId)
             .subscribe(result => {
-                console.log(result);
                 this.userProfile.username = result[0].username;
                 this.userProfile.firstName = result[0].firstName;
                 this.userProfile.lastName = result[0].lastName;
@@ -83,14 +82,11 @@ export class ViewProfileComponent implements OnInit {
                 this.userProfile.description = result[0].description;
                 this.userProfile.companyName = result[0].companyName;
                 this.userProfile.country = result[0].country;
-                console.log(this.userProfile);
             });
     }
     getCommentsForUser() {
         this.commentService.getAllCommentsForUser(this.userId, this.authToken)
         .subscribe(res => {
-        console.log("Result");
-        console.log(res);
         for (let i of res) {
           this.comments.push(i);
         }
