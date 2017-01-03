@@ -28,9 +28,10 @@ import { JobApplicationFormComponent } from './jobs/job-application-form/job-app
 import { JobFilterPipe } from './custom-pipes/job-filter.pipe';
 import { FreelancersFilterPipe } from './custom-pipes/freelancers-filter.pipe';
 import { ViewProfileComponent } from './pages/profile-view/profile-view';
+import { CommentDetailsComponent } from './pages/comments-detail/comments-detail';
 import { EmployersFilterPipe } from './custom-pipes/employers-filter.pipe';
 import { CommentComponent } from './pages/comment-create/comment-create.component';
-import { TagFilterPipe } from './custom-pipes/tag-filter.pipe'
+import { TagFilterPipe } from './custom-pipes/tag-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { TagFilterPipe } from './custom-pipes/tag-filter.pipe'
     CheckUserRoleDirective,
     CheckForClickedButtonDirective,
     CommentComponent,
+    CommentDetailsComponent,
     TagFilterPipe
   ],
   imports: [

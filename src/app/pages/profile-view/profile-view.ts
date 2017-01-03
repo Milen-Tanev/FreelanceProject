@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UsersProfileService } from '../../services/index';
+import { UsersProfileService, CommentsService } from '../../services/index';
 import { UserProfile } from '../../../models/user-profile.model';
 
 import { guestUserAuthToken }from '../../../shared/constants';
@@ -16,13 +16,16 @@ export class ViewProfileComponent implements OnInit {
     authToken: string;
     userId: string;
     isNotChecked: boolean;
+    comments: Comment[];
 
-    constructor(private activatedRoute: ActivatedRoute, private usersPorfileService: UsersProfileService) { this.authToken = guestUserAuthToken; }
+    constructor(private activatedRoute: ActivatedRoute, private usersPorfileService: UsersProfileService, private commentService: CommentsService) { this.authToken = guestUserAuthToken; }
 
     ngOnInit() {
         this.userProfile = new UserProfile('', '', '', '', '', '', '', '');
+        this.comments = [];
         this.authToken = guestUserAuthToken;
         this.viewProfileById();
+        this.getCommentsForUser();
         this.isNotChecked = true;
     }
 
@@ -82,5 +85,15 @@ export class ViewProfileComponent implements OnInit {
                 this.userProfile.country = result[0].country;
                 console.log(this.userProfile);
             });
-  }
+    }
+    getCommentsForUser() {
+        this.commentService.getAllCommentsForUser(this.userId, this.authToken)
+        .subscribe(res => {
+        console.log("Result");
+        console.log(res);
+        for (let i of res) {
+          this.comments.push(i);
+        }
+    });
+    }
 }

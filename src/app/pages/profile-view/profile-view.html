@@ -45,5 +45,9 @@
                     </div>
             </div>
         </div>
+        <h5>Comments</h5>
+        <div app-comment-detail *ngFor="let comment of comments" [app-comment-detail]="comment"></div>
     </div>
+ 
+
 </div>

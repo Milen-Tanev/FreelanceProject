@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
 
 import { Comment } from '../../../models/comment.model';
 import { CommentsService } from '../../services/index';
@@ -17,21 +17,25 @@ export class CommentComponent implements OnInit {
     private content;
     private senderId: string;
     private addresseeId: string;
+    private sender: string;
     private comment: Comment;
 
-constructor(private commentsService: CommentsService, private router: Router ) { }
+constructor(private commentsService: CommentsService, private router: Router, private activatedRoute: ActivatedRoute ) { }
 
     ngOnInit() {
         this.senderId = '';
         this.addresseeId = '';
         this.content = '';
-        this.comment = new Comment('', '', '');
+        this.sender = '';
+        this.comment = new Comment('', '', '', '');
     }
     createComment() {
         console.log('comment');
         let authtoken = sessionStorage.getItem('authtoken');
         this.senderId = sessionStorage.getItem('id');
-        this.comment = new Comment(this.senderId, this.addresseeId, this.content);
+        this.sender = sessionStorage.getItem('username');
+        this.addresseeId = this.activatedRoute.snapshot.params['id'];
+        this.comment = new Comment(this.senderId, this.addresseeId, this.content, this.sender);
         this.commentsService.createComment(authtoken, this.comment)
             .subscribe(() => this.router.navigate(['/home']));
     }
